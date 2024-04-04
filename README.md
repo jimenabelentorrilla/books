@@ -1,4 +1,4 @@
-# React + Vite
+# Biblioteca React
 
 Pequeño proyecto para practicar Hooks!
 
