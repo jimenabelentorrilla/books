@@ -1,0 +1,42 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 25px;
+}
+
+.sp{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.sp span{
+  font-size: 20px;
+}
+
+.box-libros{
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  flex-wrap: wrap;
+  gap:40px;
+  margin: 10px;
+}
+
+h3{
+  margin: 0;
+}
+
+.imagen-libro{
+  width: 150px;
+  height: auto;
+}
