@@ -4,6 +4,7 @@ import { Libros } from './components/Libros';
 import { Slider } from '@mui/material';
 import { SelectInput } from "./components/SelectInput";
 import { AppContext } from './context/AppProvider';
+import { ListaLectura } from './components/ListaLectura';
 
 
 /**TO DO: 
@@ -17,8 +18,9 @@ function App() {
   const { setPaginas, cuentaLibros } = useContext(AppContext);
   
   return (
-
     <>
+    <div className="cont-flex">
+      <div>
       <h1>{cuentaLibros} libros disponibles</h1>
       <div className="container">
         <SelectInput />
@@ -35,10 +37,14 @@ function App() {
               onChange={e => setPaginas(e.target.value)} />
               <span>+</span>
             </div>
-            
         </div>
       </div>
       <Libros />
+    </div>
+      <ListaLectura />
+    
+    </div>
+    
   </>
   );
 }

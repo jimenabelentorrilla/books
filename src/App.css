@@ -1,10 +1,11 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
-
+.cont-flex{
+  display: flex;
+  flex-direction: row;  
+}
 .container{
   display: flex;
   flex-direction: row;
@@ -39,4 +40,15 @@ h3{
 .imagen-libro{
   width: 150px;
   height: auto;
+}
+.imagen-libro:hover{
+  opacity: 0.2;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+.list-modal{
+  background-color: #12181C;
+  width: 580px;
+  border: 1px solid whitesmoke;
+  border-radius: 25px;
 }

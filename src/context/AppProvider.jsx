@@ -9,6 +9,10 @@ export const AppProvider = ( {children} ) => {
     const [libros, setLibros] = useState([]);
     const [librosFiltrados, setLibrosFiltrados] = useState([]);
     const [cuentaLibros, setCuentaLibros] = useState(0);
+    const [librosSeleccionados, setLibrosSeleccionados] = useState([]);
+  
+   
+
 
 	const cargarDatos = async () => { 
             try {
@@ -41,7 +45,21 @@ export const AppProvider = ( {children} ) => {
         useEffect(() => {
             setCuentaLibros(librosFiltrados.length);
         }, [librosFiltrados]);
-    
+
+        const handleChar = (libro) =>{
+            
+            // Verificar si el libro ya está en la lista de seleccionados
+            const estaSeleccionado = librosSeleccionados.some(
+                (lib) => lib.book.title === libro.book.title);
+
+            // Si no está seleccionado, agregarlo a la lista
+            if (!estaSeleccionado) {
+                setLibrosSeleccionados([...librosSeleccionados, libro]);
+            }
+           
+        }
+
+            
 		const contextValue = {
 			genero,
 			setGenero,
@@ -49,7 +67,10 @@ export const AppProvider = ( {children} ) => {
 			setPaginas,
 			libros,
 			librosFiltrados,
-			cuentaLibros
+			cuentaLibros, 
+            librosSeleccionados,
+            handleChar
+                       
 		};
 
 	return (
